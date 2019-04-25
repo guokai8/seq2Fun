@@ -16,7 +16,7 @@ install_github("guokai8/seq2Fun")
 library(seq2Fun)
 ## check if blast tools have been installed
 blast_help()
-db <- preparedb(species = "arabidopsis", seqtype = "AA", savedb = TRUE) 
+db <- preparedb(species = "Arabidopsis thaliana", seqtype = "AA", savedb = TRUE) 
 str(db, 1)
 ###savedb will write out the sequences file in the work directory
 makeblastdb(db$db, dbtype = "prot")
