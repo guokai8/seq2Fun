@@ -17,6 +17,7 @@ library(seq2Fun)
 ## check if blast tools have been installed
 blast_help()
 db <- preparedb(species = "Arabidopsis thaliana", seqtype = "AA", savedb = TRUE) 
+## Take several minutes
 str(db, 1)
 ###savedb will write out the sequences file in the work directory
 makeblastdb(db$db, dbtype = "prot")
