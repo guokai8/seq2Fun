@@ -1,7 +1,7 @@
 # seq2Fun
 __seq2Fun__ provides function to annotate protein or coding sequences with KEGG pathways
 ## Description
-Annotate the protein and coding sequences with KEGG pathways could be done with _KAAS_[https://www.genome.jp/kegg/kaas/] website. Here the _seq2Fun_ try to do same thing with _blast_ function.
+Annotate the protein and coding sequences with KEGG pathways could be done with _KAAS_ [https://www.genome.jp/kegg/kaas/] website. Here the _seq2Fun_ try to do same thing with _blast_ function.
 ## Requirement
 The blast+ should be installed before installing _seq2Fun_ package
 ## Installation
