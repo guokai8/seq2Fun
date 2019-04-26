@@ -27,8 +27,7 @@ blast_help <- function(tool = "blastx") {
 ##' @export
 ##' @author Kai Guo
 listspecies <- function(){
-    data(korg)
-    return(korg)
+    org <- keggList("organism")
+    return(org)
 }
-
 
