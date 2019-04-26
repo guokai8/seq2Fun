@@ -117,9 +117,10 @@ keggGetm <- function(dbentries,
         }
     }
 }
-##' extract kegg code
-##' modified from pathview kegg.species.code
-##' @param species
+##' @title Extract kegg code
+##' @description get.kegg.code are modified from pathview kegg.species.code
+##' @name get.kegg.code
+##' @param species species user provide
 get.kegg.code <- function (species = "hsa")
 {
     nspec = length(species)
