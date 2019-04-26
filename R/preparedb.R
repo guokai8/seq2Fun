@@ -45,13 +45,12 @@ preparedb <- function(species = "human", seqtype = "AA", savedb = TRUE,
     return(out)
 }
 ##' find the species code for kegg
-##' @importFrom pathview kegg.species.code
 ##' @param species character, either the kegg code, scientific name or the
 ##' common name of the target species. Default species="hsa", it is
 ##' equivalent to use either "Homo sapiens" (scientific name) or
 ##' "human" (common name).
 .get.spe.code <- function(species="hsa"){
-    species.data = kegg.species.code(species, na.rm = T, code.only = F)
+    species.data = get.kegg.code(species)
     species = species.data[1]
     return(species)
 }
@@ -118,3 +117,40 @@ keggGetm <- function(dbentries,
         }
     }
 }
+##' extract kegg code
+##' Copy from pathview kegg.species.code
+##' @param species
+get.kegg.code <- function (species = "hsa")
+{
+    nspec = length(species)
+    if (!exists("korg"))
+        data(korg)
+    ridx = match(species, korg[, 1:5])%%nrow(korg)
+    nai = is.na(ridx)
+    if (sum(nai) > 0) {
+        si = try(load(url("https://pathview.uncc.edu/data/korg.1.rda")))
+        if (class(si) != "try-error") {
+            ridx.1 = match(species, korg.1[, 1:5])%%nrow(korg.1)
+            nai.1 = is.na(ridx.1)
+            if (sum(nai.1) < sum(nai)) {
+                korg = korg.1
+                ridx = ridx.1
+                nai = nai.1
+            }
+        }
+        if (sum(nai) > 0) {
+            na.msg = sprintf("Unknown species '%s'!", paste(species[nai],
+                                                            sep = "", collapse = "', '"))
+            message("Note: ", na.msg)
+        }
+        if (sum(nai) == nspec) {
+            stop.msg = "All species are invalid!"
+            stop(stop.msg)
+        }
+    }
+    if (any(ridx[!nai] == 0))
+        ridx[!nai & ridx == 0] = nrow(korg)
+    species.info = korg[ridx, 3]
+    return(species.info)
+}
+
