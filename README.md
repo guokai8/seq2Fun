@@ -25,7 +25,7 @@ str(db, 2)
 makeblastdb(db, dbtype = "prot")
 ###make blast db, set runblast = FALSE if you prefer diamond
 seqs <- db$db[sample(500, 10)] ## random choose 10 sequences
-ann <- seq2fun(query = seqs, db = db, evalue = 1e-10, num_threads = 2)
+ann <- seq2fun(query = seqs, db = db, type = "blastp", evalue = 1e-10, num_threads = 2)
 ## set bidirectional = TRUE if you prefer bidirectional blast
 ## set runblast = FALSE if you prefer diamond
 head(ann)
