@@ -28,6 +28,9 @@ seqs <- db$db[sample(500, 10)] ## random choose 10 sequences
 ann <- seq2fun(query = seqs, db = db, evalue = 1e-10, num_threads = 2)
 head(ann)
 ```
+## Note
+The seq2Fun downloads and uses KEGG data. Non-academic uses may require a KEGG
+license agreement (details at http://www.kegg.jp/kegg/legal.html).
 
 ## Contact information
 
