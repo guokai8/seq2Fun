@@ -118,7 +118,7 @@ keggGetm <- function(dbentries,
     }
 }
 ##' extract kegg code
-##' Copy from pathview kegg.species.code
+##' modified from pathview kegg.species.code
 ##' @param species
 get.kegg.code <- function (species = "hsa")
 {
