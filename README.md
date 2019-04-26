@@ -1,7 +1,7 @@
 # seq2Fun
 __seq2Fun__ provides function to annotate protein or coding sequences with KEGG pathways
 ## Description
-Annotate the protein and coding sequences with KEGG pathways could be done with [_KAAS_](https://www.genome.jp/kegg/kaas/) website. Here the _seq2Fun_ try to do same thing with _blast_ function.
+Annotate the protein and coding sequences with KEGG pathways could be done with [_KAAS_](https://www.genome.jp/kegg/kaas/) website. Here the _seq2Fun_ try to do same thing with _blast_ and _diamond_ function.
 ## Requirement
 The blast+ should be installed before installing _seq2Fun_ package
 ## Installation
@@ -23,10 +23,11 @@ db <- preparedb(species = "Arabidopsis thaliana", seqtype = "AA", savedb = TRUE)
 str(db, 2)
 ###savedb will write out the sequences file in the work directory
 makeblastdb(db, dbtype = "prot")
-###make blast db  
+###make blast db, set runblast = FALSE if you prefer diamond
 seqs <- db$db[sample(500, 10)] ## random choose 10 sequences
 ann <- seq2fun(query = seqs, db = db, evalue = 1e-10, num_threads = 2)
 ## set bidirectional = TRUE if you prefer bidirectional blast
+## set runblast = FALSE if you prefer diamond
 head(ann)
 ```
 ## Note
