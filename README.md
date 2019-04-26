@@ -26,6 +26,7 @@ makeblastdb(db, dbtype = "prot")
 ###make blast db  
 seqs <- db$db[sample(500, 10)] ## random choose 10 sequences
 ann <- seq2fun(query = seqs, db = db, evalue = 1e-10, num_threads = 2)
+## set bidirectional = TRUE if you prefer bidirectional blast
 head(ann)
 ```
 ## Note
