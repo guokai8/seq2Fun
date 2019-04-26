@@ -34,6 +34,7 @@ preparedb <- function(species = "human", seqtype = "AA", savedb = TRUE,
     nn <- ceiling(nr/10 + 1)
     lhs<- .vsplit(keggentry$keggid,nn)
     cat("Downloading sequences from KEGG database ......\n")
+    cat("Total KEGG genes: ", nr, " and split into ",nn, "groups ......\n")
     query <- lapply(lhs, function(x) keggGetm(x, seqquery))
     query <- do.call(c,query)
     cat("All sequences were downloaded\n")
