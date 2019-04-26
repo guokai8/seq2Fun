@@ -20,6 +20,7 @@ preparedb <- function(species = "human", seqtype = "AA", savedb = TRUE,
         seqquery = "ntseq"
     }
     specode <- .get.spe.code(species = species)
+    cat("Find ",species, "with kegg code: ",specode,"\n")
     keggentry <- get.kegg.entry(specode = specode)
     if(file.exists(paste(path,"/",specode, ".fasta", sep=""))){
         if(seqtype == "AA"){
@@ -31,8 +32,10 @@ preparedb <- function(species = "human", seqtype = "AA", savedb = TRUE,
     nr <- nrow(keggentry)
     nn <- ceiling(nr/10 + 1)
     lhs<- .vsplit(keggentry$keggid,nn)
+    cat("Downloading sequences from KEGG database ......\n")
     query <- lapply(lhs, function(x) keggGetm(x, seqquery))
     query <- do.call(c,query)
+    cat("All sequences were downloaded\n")
     if(isTRUE(savedb)){
         writeXStringSet(query,paste(path,"/",specode,".fasta",sep=""),format="fasta",append = F)
     }
