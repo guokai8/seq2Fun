@@ -23,6 +23,7 @@ preparedb <- function(species = "human", seqtype = "AA", savedb = TRUE,
     cat("Find ",species, "with kegg code: ",specode,"\n")
     keggentry <- get.kegg.entry(specode = specode)
     if(file.exists(paste(path,"/",specode, ".fasta", sep=""))){
+        cat("Find ",paste(path,"/",specode, ".fasta", sep="")," in ",path,"\n")
         if(seqtype == "AA"){
             query=readAAStringSet(paste(path, "/", specode, ".fasta", sep=""))
         }else{
