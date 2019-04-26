@@ -10,7 +10,7 @@ library(devtools)
 install_github("guokai8/seq2Fun")
 ``` 
 
-## Getting started
+## Software Usage
 
 ```
 library(seq2Fun)
