@@ -140,7 +140,7 @@ runblast <- function(seq_in, dbfile, tool = 'blastp', evalue = 1e-10,
                     "-outfmt", outfmt, "-num_threads", num_threads,
                     "-out", blastr, sep=" ")
     tool <- .find.tools(tool = tool)
-    system(paste(tool, params, "> /dev/null", sep=" "))
+    system(paste(tool, params, "> /dev/null 2>&1", sep=" "))
     cat("Finish blast ",tool," ......\n")
 }
 
@@ -160,6 +160,6 @@ rundiamond <- function(seq_in, dbfile, tool = 'blastp', evalue = 1e-10,
                     "-f", outfmt, "-p", num_threads,
                     "-o", blastr, "--sensitive",sep=" ")
     loc <- .find.tools(tool = "diamond")
-    system(paste(loc, tool, params, "> /dev/null", sep=" "))
+    system(paste(loc, tool, params, "> /dev/null 2>&1", sep=" "))
     cat("Finish dimaond ",tool," ......\n")
 }
