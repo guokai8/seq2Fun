@@ -4,14 +4,21 @@
 \alias{makeblastdb}
 \title{make blast database}
 \usage{
-makeblastdb(db, dbtype = "prot", args = "", path = NULL)
+makeblastdb(db, seqcode = NULL, dbtype = "prot", args = "",
+  path = NULL, runblast = TRUE)
 }
 \arguments{
-\item{db}{KEGG db}
+\item{db}{KEGG db or sequences}
+
+\item{seqcode}{speceis name or KEGG code (without spaces)}
 
 \item{dbtype}{character "nucl" or "prot"}
 
 \item{args}{other arguments for makeblastdb}
+
+\item{path}{working directory}
+
+\item{runblast}{use blast+ or diamond}
 }
 \description{
 make blast database
