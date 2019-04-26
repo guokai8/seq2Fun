@@ -4,10 +4,10 @@
 \alias{makeblastdb}
 \title{make blast database}
 \usage{
-makeblastdb(file, dbtype = "prot", args = "")
+makeblastdb(db, dbtype = "prot", args = "", path = NULL)
 }
 \arguments{
-\item{file}{sequence file}
+\item{db}{KEGG db}
 
 \item{dbtype}{character "nucl" or "prot"}
 

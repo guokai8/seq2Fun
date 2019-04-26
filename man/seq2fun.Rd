@@ -4,21 +4,21 @@
 \alias{seq2fun}
 \title{Blast search against kegg database}
 \usage{
-seq2fun(query, dbfile, anno, type = "blastp", evalue = 1e-10,
-  num_threads = 1)
+seq2fun(query, db, type = "blastp", evalue = 1e-10, num_threads = 1,
+  path = NULL)
 }
 \arguments{
 \item{query}{query sequences}
-
-\item{dbfile}{database}
-
-\item{anno}{kegg annotation file}
 
 \item{type}{blastx, blastn or tblast}
 
 \item{evalue}{e-value}
 
 \item{num_threads}{num_threads}
+
+\item{dbfile}{database}
+
+\item{anno}{kegg annotation file}
 }
 \description{
 seq2fun provide function to annotate sequences
