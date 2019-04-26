@@ -25,7 +25,7 @@ str(db, 2)
 makeblastdb(db, dbtype = "prot")
 ###make blast db  
 seqs <- db$db[sample(500, 10)] ## random choose 10 sequences
-ann <- seq2Fun(query = seqs, dbfile = db, evalue = 1e-10, num_threads = 2)
+ann <- seq2fun(query = seqs, dbfile = db, evalue = 1e-10, num_threads = 2)
 head(ann)
 ```
 
