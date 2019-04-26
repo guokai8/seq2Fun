@@ -3,11 +3,11 @@
 \name{get.kegg.code}
 \alias{get.kegg.code}
 \title{extract kegg code
-Copy from pathview kegg.species.code}
+modified from pathview kegg.species.code}
 \usage{
 get.kegg.code(species = "hsa")
 }
 \description{
 extract kegg code
-Copy from pathview kegg.species.code
+modified from pathview kegg.species.code
 }
