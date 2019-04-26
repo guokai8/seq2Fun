@@ -2,12 +2,13 @@
 % Please edit documentation in R/preparedb.R
 \name{get.kegg.code}
 \alias{get.kegg.code}
-\title{extract kegg code
-modified from pathview kegg.species.code}
+\title{Extract kegg code}
 \usage{
 get.kegg.code(species = "hsa")
 }
+\arguments{
+\item{species}{species user provide}
+}
 \description{
-extract kegg code
-modified from pathview kegg.species.code
+get.kegg.code are modified from pathview kegg.species.code
 }

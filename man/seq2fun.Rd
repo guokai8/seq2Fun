@@ -5,7 +5,7 @@
 \title{Blast search against kegg database}
 \usage{
 seq2fun(query, db, type = "blastp", evalue = 1e-10, num_threads = 1,
-  path = NULL)
+  path = NULL, bidirectional = FALSE)
 }
 \arguments{
 \item{query}{query sequences}
@@ -15,6 +15,10 @@ seq2fun(query, db, type = "blastp", evalue = 1e-10, num_threads = 1,
 \item{evalue}{e-value}
 
 \item{num_threads}{num_threads}
+
+\item{path}{working directory}
+
+\item{bidirectional}{use bidirectional blast}
 
 \item{dbfile}{database}
 
