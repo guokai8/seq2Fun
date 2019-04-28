@@ -1,3 +1,4 @@
+## collected from pathview package
 .printf <- function(...) message(noquote(sprintf(...)))
 
 .cleanUrl <- function(url)
