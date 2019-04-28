@@ -19,7 +19,7 @@
 ##' blast_help()
 ##' @author Kai Guo
 ##' @export
-blast_help <- function(tool = "blastx") {
+blast_help <- function(tool = "blastp") {
     system(paste(.find.tools(c(tool)), "-help"))
 }
 ##' @importFrom KEGGREST keggList
