@@ -14,7 +14,7 @@ install_github("guokai8/seq2Fun")
 
 ```
 library(seq2Fun)
-## check if blast tools have been installed
+## check if blast+ or diamond tools have been installed
 blast_help()
 head(listspecies)
 ###Find the correct species name
