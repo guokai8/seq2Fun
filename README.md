@@ -16,7 +16,7 @@ install_github("guokai8/seq2Fun")
 library(seq2Fun)
 ## check if blast+ or diamond tools have been installed
 blast_help()
-head(listspecies)
+head(listspecies())
 ###Find the correct species name
 db <- preparedb(species = "Arabidopsis thaliana", seqtype = "AA", savedb = TRUE) 
 ## Take several minutes
