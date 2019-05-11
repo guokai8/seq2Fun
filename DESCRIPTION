@@ -9,7 +9,7 @@ License: GPL-2
 Encoding: UTF-8
 LazyData: true
 Imports: utils, Biostrings, KEGGREST, methods, dplyr, magrittr, httr
-Depends:
+Depends: utils, Biostrings, KEGGREST, methods, dplyr, magrittr, httr
 LinkingTo:
 Suggests: knitr, rmarkdown, testthat
 VignetteBuilder: knitr
